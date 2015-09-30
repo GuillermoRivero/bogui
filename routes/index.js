@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'BORIddsdASO' });
+  res.render('index', { title: 'BoguiJS' });
 });
 
 module.exports = router;
