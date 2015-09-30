@@ -1,5 +1,135 @@
 extends layout
 
-block content
-  h1= title
-  p Welcome to #{title} Boris es una cerdilla
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    
+  body.dropzone
+    section(role='main')
+      header#bars
+        .cssmenu.noselect
+          ul#menu
+            li.has-sub
+              span Archivo
+              ul
+                li
+                  span#fileMenu.has-sub Abrir Imagen
+                  //
+                    <ul>
+                    <li><span id="openImageFromURL">Abrir Imagen Desde URL</span></li>
+                    <li><span id="openImageFromWebCam">Abrir Imagen Desde WebCam</span></li>
+                    </ul>
+                li
+                  span#openImageAs Abrir Imagen Como
+                li
+                  span#saveImage Guardar Imagen
+                li
+                  span#saveImageAs Guardar Imagen Como
+            li.has-sub
+              span Ver
+              ul
+                li
+                  span#histograma Histograma
+                li
+                  span#histogramaAcumulativo Histograma Acumulativo
+                li
+                  span#informacionImagen Información imagen
+            li.has-sub
+              span Configuración
+              ul
+                li.has-sub
+                  span Modo Imagen
+                  ul
+                    li
+                      span#PAL PAL
+                    li
+                      span#NTSC NTSC
+                li.has-sub
+                  span Formato Descarga
+                  ul
+                    li
+                      span#WEBP WEBP
+                    li
+                      span#PNG PNG
+                    li
+                      span#JPEG JPEG
+                li
+                  span#imageSize Tamaño Imagen
+                li
+                  span#histogramSize Tamaño Histogramas
+                // <li><span id="saveConfig">Guardar Configuraci&oacute;n</span></li>
+                li
+                  span#defaultConfig Configuración Por Defecto
+                li
+                  span#actualConfig Ver Configuración Actual
+            li.has-sub
+              span Operaciones Lineales
+              ul
+                li
+                  span#transformacionTramos Transformación lineal por tramos
+                li
+                  span#ajusteBrilloContraste Ajuste lineal de brillo y contraste
+            li.has-sub
+              span Operaciones No Lineales
+              ul
+                li
+                  span#correccionGamma Correccion Gamma
+                li.has-sub
+                  span Histograma
+                  ul
+                    li
+                      span#ecualizacion Ecualizacion
+                    li
+                      span#especificacion Especificación
+                li
+                  span#imageCrossSection Perfil (Image-Cross Section)
+                li
+                  span#imagenDiferencia Diferencia entre dos imagenes
+                  ul
+                    li
+                      span#mapaCambios Mapa de cambios
+                li
+                  span#simularDigitalizacion Simulacion digitalizacion
+            li.has-sub
+              span Operaciones Geometricas
+              ul
+                li
+                  span#rotacion.has-sub Rotación
+                li
+                  span#zoom Zoom
+                li
+                  span#Transformaciones Transformaciones
+                  ul
+                    li
+                      span#espejoHorizontal Espejo Horizontal
+                    li
+                      span#espejoVertical Espejo Vertical
+                    li
+                      span#transpuesta Transpuesta
+        ul#tools.ui-widget.ui-helper-clearfix
+          li.ui-state-default.ui-corner-all(title='Abrir Imagen (alt+o)')
+            span#fileButton.ui-icon.ui-icon-document
+            input#fileSelector(type='file', accept='image/*', multiple='multiple')
+          li.ui-state-default.ui-corner-all(title='Abrir Imagen Como (shift+o)')
+            span#openImageAs.ui-icon.ui-icon-folder-open
+          li.ui-state-default.ui-corner-all(title='Guardar Imagen (alt+s)')
+            span#saveButton.ui-icon.ui-icon-arrowthick-1-s
+          li.ui-state-default.ui-corner-all(title='Guardar Imagen Como (shift+s)')
+            span#saveAsButton.ui-icon.ui-icon-image
+          // <li class="ui-state-default ui-corner-all" title="Guardar configuración (shift+c)"><span id="saveConfigButton" class="ui-icon ui-icon-disk"></span></li>
+          li.ui-state-default.ui-corner-all(title='Puntero (alt+p)')
+            span#puntero.ui-icon.ui-icon-arrowthick-1-nw
+          li.ui-state-default.ui-corner-all(title='Región de interés (alt+r)')
+            span#roi.ui-icon.ui-icon-arrow-2-ne-sw
+          li.ui-state-default.ui-corner-all(title='Image Cross Section (alt+i)')
+            span#ics.ui-icon.ui-icon-grip-dotted-horizontal
+          li.ui-state-default.ui-corner-all(title='Recortar(alt+c)')
+            span#recortar.ui-icon.ui-icon-scissors
+          li.ui-state-default.ui-corner-all(title='Información (shift+i)')
+            span#informacion.ui-icon.ui-icon-info
+    #workspace.logoBackground
+      #dropContent.hidden.noPointerEvents SUELTA AQUÍ TUS IMÁGENES
+    footer
+      | Imagen seleccionada:
+      span#imgSelected
