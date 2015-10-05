@@ -4,7 +4,7 @@ var enviroment = process.env.NODE_ENV || "develop"
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  if(enviroment === 'staging'){
+  if(enviroment === 'production'){
     res.render('error', { message: 'staging' });
 
   }else{
