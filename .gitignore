@@ -3,6 +3,9 @@ logs
 *.log
 npm-debug.log*
 
+#Temporal Files
+*~
+
 ## Directory-based project format:
 .idea/
 
