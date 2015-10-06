@@ -3,7 +3,7 @@ var router = express.Router();
 var enviroment = process.env.NODE_ENV || "develop"
 
 router.get('/', function(req, res, next) {
-  if(enviroment === 'develop'){
+  if(enviroment === 'production'){
     res.render('commingSoon');
 
   }else{
