@@ -6,12 +6,6 @@ npm-debug.log*
 #Temporal Files
 *~
 
-## Directory-based project format:
-.idea/
-
-#IDE files
-*.iml
-
 # Runtime data
 pids
 *.pid
