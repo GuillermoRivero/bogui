@@ -5,7 +5,6 @@ var enviroment = process.env.NODE_ENV || "develop"
 router.get('/', function(req, res, next) {
   if(enviroment === 'production'){
     res.render('commingSoon');
-
   }else{
     res.render('index', { title: 'BoguiJS' });
   }
